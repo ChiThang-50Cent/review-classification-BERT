@@ -43,10 +43,21 @@
 </head>
 <body>
   <div class="form-container">
-    <form>
+    <form action="{{ url_for('get_res') }}" method="POST">
       <input type="text" name="text-input" placeholder="Nhập văn bản...">
       <input type="submit" value="Gửi">
     </form>
+    
+	  {% if label %}
+    <div>
+        <div>
+            <p>Review: {{review}}</p> 
+            <p>Label: {{label}}</p>
+            <p>Confident: {{conf}}%</p>
+        </div>
+    </div>
+    {% endif %}
+
   </div>
 </body>
 </html>
